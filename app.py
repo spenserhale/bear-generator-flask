@@ -22,14 +22,14 @@ def get_saved_data():
 
 @app.route('/')
 def index():
-    return render_template('index.html', saves=get_saved_data)
+    return render_template('index.html', saves=get_saved_data())
 
 
 @app.route('/builder')
 def builder():
     return render_template(
         'builder.html',
-        saves=get_saved_data,
+        saves=get_saved_data(),
         options=DEFAULTS
     )
 
