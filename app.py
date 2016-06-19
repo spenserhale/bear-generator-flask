@@ -9,6 +9,7 @@ from flask import (Flask,
 
 app = Flask(__name__)
 
+
 def get_saved_data():
     try:
         data = json.loads(request.cookies.get('character'))
@@ -16,10 +17,12 @@ def get_saved_data():
         data = {}
     return data
 
+
 @app.route('/')
 def index():
     data = get_saved_data()
     return render_template('index.html', saves=data)
+
 
 @app.route('/save', methods=['POST'])
 def save():
