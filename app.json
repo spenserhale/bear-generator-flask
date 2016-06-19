@@ -1,0 +1,7 @@
+{
+  "name": "Bear Generator Flask Project",
+  "description": "A flask app that lets you design a bear.",
+  "image": "heroku/python",
+  "repository": "https://github.com/spenserhale/bear-generator-flask",
+  "keywords": ["python", "flask" ]
+}
