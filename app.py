@@ -5,12 +5,13 @@ from flask import (Flask,
                    redirect,
                    url_for,
                    request,
-                   make_response)
+                   make_response,
+                   flash)
 
 from options import DEFAULTS
 
 app = Flask(__name__)
-
+app.secret_key = 'rh5UXm{VK-eD8x+Ndp6+r?x,+iir=%|gm^SKP/vE@H 551A2p;0&qS#.#d9A~=E+'
 
 def get_saved_data():
     try:
@@ -36,6 +37,7 @@ def builder():
 
 @app.route('/save', methods=['POST'])
 def save():
+    flash('Your Bear is Saved!')
     response = make_response(redirect(url_for('builder')))
     data = get_saved_data()
     data.update(dict(request.form.items()))
