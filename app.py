@@ -13,6 +13,7 @@ from options import DEFAULTS
 app = Flask(__name__)
 app.secret_key = 'rh5UXm{VK-eD8x+Ndp6+r?x,+iir=%|gm^SKP/vE@H 551A2p;0&qS#.#d9A~=E+'
 
+
 def get_saved_data():
     try:
         data = json.loads(request.cookies.get('character'))
